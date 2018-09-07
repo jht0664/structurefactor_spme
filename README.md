@@ -1,5 +1,5 @@
 # StructureFactor_SPME
-This program is to calculate structure factor using atomic coordinates and smooth particle mesh ewald summation (SPME) for better resolution. In this code, I focused on building faster algorithm using Numpy python and utilizing MDTraj I/O interface (http://mdtraj.org) for supporting a number of trajectory files.
+This program is to calculate structure factor using atomic coordinates and smooth particle mesh ewald summation (SPME) for better resolution. In this code, I focused on building faster algorithm (grid_Q_1ed function) using Numpy python and utilizing MDTraj I/O interface (http://mdtraj.org) for supporting a number of trajectory files.
 
 ## prerequisites in python
 I **strongly** recommend to install numpy, linking MKL library (or similar Linear Algebra libraries) and OpenMP library to get fastest performance.
@@ -97,8 +97,9 @@ Based on q range [0:3] A^(-1),
 | Intel Xeon 2.1 GHz | 144,000 | 12 | 185 | 15 |
 | Intel Xeon 2.1 GHz | 1,440,000 | 10 | 2892 | 306 |
 | Intel Xeon 2.1 GHz | 7,200,000 | 11 | 9186 | 783 |
- 
+which seems to show similar performance in Fortran program
+
 ## Acknowledge
 I converted Fortran progem credited by Dr. Jesse G. McDaniel (Georgia Tech)
- and got help for normalization factor from TingTing Weng (UW Madison)
+ and got help for normalization factor from my friend TingTing Weng (UW Madison)
 

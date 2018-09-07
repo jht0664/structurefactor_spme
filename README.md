@@ -90,12 +90,12 @@ Then, plot cation.avg.smooth and anion.avg.smooth. You can get smooth plots, but
 Linear scaling depending on data size (#atoms * #frames)
 Also, a large end q value makes slower for calculations
 
-(based on q range [0:3] A^(-1))
-CPU model | #atoms * #frames | #cpus used | CPU time (s) | wall time (s)
---------- | ---------------- | ---------- | ------------ | ------------
-Intel Xeon 2.1 GHz | 144,000 | 12 | 185 | 15
-Intel Xeon 2.1 GHz | 1,440,000 | 10 | 2892 | 306
-Intel Xeon 2.1 GHz | 7,200,000 | 11 | 9186 | 783
+Based on q range [0:3] A^(-1),
+| CPU model | #atoms * #frames | #cpus used | CPU time (s) | wall time (s) |
+| --------- | ---------------- | ---------- | ------------ | ------------- |
+| Intel Xeon 2.1 GHz | 144,000 | 12 | 185 | 15 |
+| Intel Xeon 2.1 GHz | 1,440,000 | 10 | 2892 | 306 |
+| Intel Xeon 2.1 GHz | 7,200,000 | 11 | 9186 | 783 |
  
 ## Acknowledge
 I converted Fortran progem credited by Dr. Jesse G. McDaniel (Georgia Tech)

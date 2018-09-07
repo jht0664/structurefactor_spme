@@ -1,4 +1,4 @@
-# Structure factor in python
+# StructureFactor_SPME
 This program is to calculate structure factor using atomic coordinates and smooth particle mesh ewald summation (SPME) for better resolution. In this code, I focused on building faster algorithm using Numpy python and utilizing MDTraj I/O interface (http://mdtraj.org) for supporting a number of trajectory files.
 
 ## prerequisites in python
@@ -29,7 +29,7 @@ If you want to remove some atoms to get partial structure factor, change atomtyp
 
 Once you prepare modified structure file and/or AFF_{atomtype}.out files, you are safe to run this program: for example, in examples/run_cation.sh file,
 ```
-python run_sq.tpy -i traj.trr -s cation.gro -step 4 -aff cm -cm_dq 0.01 -cm_endq 20.0 -m_dk 0.1 -end_k 5 -nproc 12 -norm YES -start 0 -end 5 -o cation.avg
+python run_sq.tpy -i traj.trr -s cation.gro -aff cm -nproc 12 -norm YES -start 0 -o cation.avg
 ```
 
 ## settings
@@ -68,7 +68,7 @@ See details https://www.ruppweb.org/Xray/comp/scatfac.htm
 * -end_k: end q for isotropic structure factor
 * -o: output surfix for isotropic structure factor
 
-## examples
+## Tutorial
 examples folder has input and out files for partial structure factor of cations and anions.
 Either option "-aff read" or "-aff no" works, thus you can understand atomic form factor file format in AFF_{atomtype}.out.
 ```
@@ -82,7 +82,7 @@ python smooth.py -i cation.avg -nw 60
 ```
 Then, plot cation.avg.smooth and anion.avg.smooth. You can get smooth plots, but smoothing would not be a good option when you are interested in sharp peaks (in high q range for solid/crystal)
 
-## version history
+## Version history
 * v0.1: initial coding
 * v0.2: made user-friend parameters
 

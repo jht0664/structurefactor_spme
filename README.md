@@ -91,6 +91,7 @@ Linear scaling depending on data size (#atoms * #frames)
 Also, a large end q value makes slower for calculations
 
 Based on q range [0:3] A^(-1),
+
 | CPU model | #atoms * #frames | #cpus used | CPU time (s) | wall time (s) |
 | --------- | ---------------- | ---------- | ------------ | ------------- |
 | Intel Xeon 2.1 GHz | 144,000 | 12 | 185 | 15 |

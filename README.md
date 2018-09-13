@@ -1,15 +1,14 @@
 # StructureFactor_SPME
-This program is to calculate structure factor using atomic coordinates and smooth particle mesh ewald summation (SPME) for better resolution. In this code, I focused on building faster algorithm (grid_Q_1ed function) using Numpy python and utilizing MDTraj I/O interface (http://mdtraj.org) for supporting a number of trajectory files.
+This program is to calculate structure factor using atomic coordinates and smooth particle mesh ewald summation (SPME) for better resolution. In this code, I focused on building faster algorithm (called `grid_Q_1ed function`) using Numpy python and utilizing [MDTraj](http://mdtraj.org) I/O interface for supporting a number of trajectory files.
 
 ## prerequisites in python
-I **strongly** recommend to install numpy, linking MKL library (or similar Linear Algebra libraries) and OpenMP library to get fastest performance.
-(See details: https://docs.scipy.org/doc/numpy-1.15.1/user/building.html)
+I **strongly** recommend to install numpy, linking MKL library (or similar Linear Algebra libraries) and OpenMP library to get fastest performance. See details: [Numpy Documents](https://docs.scipy.org/doc/numpy-1.15.1/user/building.html)
 Note that in my case I installed numpy package in miniconda (python 3.x) exporting MKL library path.
-* numpy (or numpy-mkl): for numerical calculations
-* mdtraj (> version 1.9.1): for reading trajectory and structure file
+* `Numpy` (or `numpy-mkl`): for numerical calculations
+* `mdtraj` (> version 1.9.1): for reading trajectory and structure file
 
 ## run program and parameters
-Before running this program, you may need to prepare for structure file (.gro or .pdb file). In particular, if you choose to utilize Cromer-mann coefficients for atomic form factor, you should change the name of atomtypes to atom symbol in the structure file. For example, I changed atomtypes from examples/conf.gro
+Before running this program, you may need to prepare for structure file (.gro or .pdb file). In particular, if you choose to utilize Cromer-mann coefficients for atomic form factor, you should change the name of atomtypes to atom symbol in the structure file. For example, I changed atomtypes from `examples/conf.gro`
 ```
     1Cho     C3   14   6.126  -2.495   2.991
     1Cho     H9   15   6.077  -2.570   3.058
@@ -23,11 +22,11 @@ into examples/cation.gro
     1Cho      H   16   6.083  -2.399   3.020
     1Cho      C   17   6.086  -2.530   2.842
 ```
-If you choose to read atomic form factor files (like "AFF_{atomtype}.out"), you need to make the files which have corresponding atom type names in structure file. (See details in examples/AFF_{}.out files) Note that the first column should be wave vector, q, in unit of angstrom^(-1).
+If you choose to read atomic form factor files (like `AFF_{atomtype}.out`), you need to make the files which have corresponding atom type names in structure file. (See details in `examples/AFF_{}.out files`) Note that the first column should be wave vector, q, in unit of angstrom^(-1).
 
-If you want to remove some atoms to get partial structure factor, change atomtype to "X" or "D". (examples/cation.gro)
+If you want to remove some atoms to get partial structure factor, change atomtype to "X" or "D" as shown in `examples/cation.gro`
 
-Once you prepare modified structure file and/or AFF_{atomtype}.out files, you are safe to run this program: for example, in examples/run_cation.sh file,
+Once you prepare modified structure file and/or AFF_{atomtype}.out files, you are safe to run this program: for example, in     `examples/run_cation.sh` file,
 ```
 python run_sq.tpy -i traj.trr -s cation.gro -aff cm -nproc 12 -norm YES -start 0 -o cation.avg
 ```
@@ -40,8 +39,8 @@ python run_sq.py -h
 ### multiprocessing
 * -nproc: #processors to use if possible
 ### reading trajectory
-* -i: trajectory file (any file format available in MDtraj (http://mdtraj.org/)
-* -s: structure file (see MDtraj manual)
+* -i: trajectory file (any file format available in `MDtraj`)
+* -s: structure file (see details in `MDtraj` user guide)
 * -step: read every n-th frame in trajectory file
 * -start: n-th starting frame to read after you stride trajecotry using option -step.
 * -end: n-th ending frame, which is similar with the option -start
@@ -102,4 +101,3 @@ which seems to show similar performance in Fortran program
 ## Acknowledge
 I converted Fortran progem credited by Dr. Jesse G. McDaniel (Georgia Tech)
  and got help for normalization factor from my friend TingTing Weng (UW Madison)
-

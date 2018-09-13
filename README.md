@@ -15,7 +15,7 @@ Before running this program, you may need to prepare for structure file (.gro or
     1Cho    H10   16   6.083  -2.399   3.020
     1Cho     C4   17   6.086  -2.530   2.842
 ```
-into examples/cation.gro
+into `examples/cation.gro`
 ```
     1Cho      C   14   6.126  -2.495   2.991
     1Cho      H   15   6.077  -2.570   3.058

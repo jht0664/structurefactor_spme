@@ -58,6 +58,7 @@ As for generating atomic form factors, we only consider non-dispersive part of a
 > Compton Scattering Factors for Spherically Symmetric Free Atoms, 
 > The Journal of Chemical Physics 47, 1892 (1967); https://doi.org/10.1063/1.1712213, 
 > Don T. Cromer and Joseph B. Mann
+
 See details https://www.ruppweb.org/Xray/comp/scatfac.htm
 * -aff: read atomic form factor files or generate by Cromer and Mann formula (read/cm)
 * -cm_dq: spacing between q's (will be dq_form varible in this script)
@@ -96,6 +97,7 @@ Based on q range [0:3] A^(-1),
 | Intel Xeon 2.1 GHz | 144,000 | 12 | 185 | 15 |
 | Intel Xeon 2.1 GHz | 1,440,000 | 10 | 2892 | 306 |
 | Intel Xeon 2.1 GHz | 7,200,000 | 11 | 9186 | 783 |
+
 which seems to show similar performance in Fortran program
 
 ## Acknowledge

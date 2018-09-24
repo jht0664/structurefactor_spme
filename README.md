@@ -7,7 +7,7 @@ Note that in my case I installed numpy package in miniconda (python 3.x) exporti
 * `Numpy` (or `numpy-mkl`): for numerical calculations
 * `mdtraj` (> version 1.9.1): for reading trajectory and structure file
 
-## run program and parameters
+## Before running program, You SHOULD do some works to run correcly. 
 Before running this program, you may need to prepare for structure file (.gro or .pdb file). In particular, if you choose to utilize Cromer-mann coefficients for atomic form factor, you should change the name of atomtypes to atom symbol in the structure file. For example, I changed atomtypes from `examples/conf.gro`
 ```
     1Cho     C3   14   6.126  -2.495   2.991
@@ -100,6 +100,6 @@ Based on q range [0:3] A^(-1),
 
 which seems to show similar performance in Fortran program
 
-## Acknowledge
+## Acknowledgements
 I converted Fortran progem credited by Dr. Jesse G. McDaniel (Georgia Tech)
  and got help for normalization factor from my friend TingTing Weng (UW Madison)

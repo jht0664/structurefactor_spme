@@ -1,4 +1,4 @@
-# StructureFactor_SPME
+# structurefactor_spme
 This program is to calculate structure factor using atomic coordinates and smooth particle mesh ewald summation (SPME) for better resolution. In this code, I focused on building faster algorithm (called `grid_Q_1ed` function) using Numpy python and utilizing [MDTraj](http://mdtraj.org) I/O interface for supporting a number of trajectory files.
 
 ## prerequisites in python
